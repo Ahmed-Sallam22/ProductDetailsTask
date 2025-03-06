@@ -27,7 +27,6 @@ const ProductSlider = () => {
 
   return (
     <div className="relative w-full">
-      {/* Image Slider */}
       <div className="relative">
         <Slider ref={(s) => setSlider(s)} {...settings}>
           {images.map((img, index) => (
@@ -41,7 +40,6 @@ const ProductSlider = () => {
           ))}
         </Slider>
 
-        {/* Left Arrow */}
         <button
           className="absolute left-2 top-1/2 -translate-y-1/2 bg-white shadow-md p-2 rounded-full sm:p-1"
           onClick={() => slider?.slickPrev()}
@@ -49,7 +47,6 @@ const ProductSlider = () => {
           <FaChevronLeft className="text-gray-700 text-lg sm:text-base" />
         </button>
 
-        {/* Right Arrow */}
         <button
           className="absolute right-2 top-1/2 -translate-y-1/2 bg-white shadow-md p-2 rounded-full sm:p-1"
           onClick={() => slider?.slickNext()}
@@ -58,7 +55,6 @@ const ProductSlider = () => {
         </button>
       </div>
 
-      {/* Thumbnails */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mt-4 px-2 sm:px-0">
         {images.map((img, index) => (
           <img

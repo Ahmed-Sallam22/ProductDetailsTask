@@ -10,12 +10,11 @@ const Product = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Simulate a 3-second loading time
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 3500);
+    }, 2500);
 
-    return () => clearTimeout(timer); // Cleanup timeout
+    return () => clearTimeout(timer); 
   }, []);
 
   if (loading) {
@@ -27,18 +26,14 @@ const Product = () => {
   }
   return (
     <div className="w-[95%]  py-4 mx-auto">
-      {/* Breadcrumb */}
       <Breadcrumb />
 
-      {/* Main Layout */}
       <div className="flex flex-col md:flex-row gap-6 mx-auto">
-        {/* Left Section: Image & Product Info */}
         <div className="w-full md:w-3/5 xl:w-2/3 mx-auto p-6 flex flex-col shadow-md rounded-xl">
           <ImageSlider />
           <ProductInfo />
         </div>
 
-        {/* Right Section: Brand & Checkout */}
         <div className="w-full md:w-2/5 xl:w-1/3 space-y-4 shadow-md rounded-xl px-4 py-6">
           <BrandInfo />
           <CheckoutSection />

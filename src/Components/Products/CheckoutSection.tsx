@@ -7,7 +7,6 @@ const CheckoutSection = () => {
 
   return (
     <div className="bg-gray-100 p-4 md:p-6 rounded-lg shadow-md w-full max-w-lg mx-auto">
-      {/* Quantity Selector */}
       <div className="flex items-center justify-between bg-white px-4 py-2 rounded-2xl shadow-sm">
         <button
           onClick={() => setQuantity((prev) => Math.max(1, prev - 1))}
@@ -24,12 +23,10 @@ const CheckoutSection = () => {
         </button>
       </div>
 
-      {/* Proceed to Checkout Button */}
       <button className="w-full bg-yellow-600 text-white py-2.5 md:py-3 mt-4 rounded-2xl text-md md:text-lg font-semibold shadow-md hover:bg-yellow-700 transition">
         Proceed to Checkout
       </button>
 
-      {/* Shipping & Policies */}
       <ul className="text-gray-800 mt-4 space-y-2 text-sm md:text-base">
         <li className="flex items-center text-green-600">
           <CgCheck className="text-xl md:text-2xl mr-2" /> 
