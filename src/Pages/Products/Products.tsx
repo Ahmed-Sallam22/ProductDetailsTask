@@ -4,8 +4,27 @@ import Breadcrumb from "../../Components/Products/breadcrumbs";
 import BrandInfo from "../../Components/Products/Brand_info";
 import CheckoutSection from "../../Components/Products/CheckoutSection";
 import ContactOptions from "../../Components/Products/ContactOptions";
+import { useEffect, useState } from "react";
 
 const Product = () => {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate a 3-second loading time
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 3500);
+
+    return () => clearTimeout(timer); // Cleanup timeout
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center h-screen bg-gray-100">
+        <div className="animate-spin rounded-full h-12 w-12 border-t-4 border-blue-500 border-solid"></div>
+      </div>
+    );
+  }
   return (
     <div className="w-[95%]  py-4 mx-auto">
       {/* Breadcrumb */}
